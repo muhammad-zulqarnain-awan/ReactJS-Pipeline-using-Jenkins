@@ -25,11 +25,11 @@ function App() {
       </div>
       <p className="read-the-docs">DevOps Project</p>
       <p className="read-the-docs">
-        Containerize ReactJS app and Push to DockerHub using GitHub Actions
+        Containerize ReactJS app and Push to DockerHub using Jenkins
       </p>
       <br />
       <p>
-        <a href="https://github.com/muhammad-zulqarnain-awan/CICD_ReactJS_Container.git">
+        <a href="https://github.com/muhammad-zulqarnain-awan/ReactJS-Pipeline-using-Jenkins">
           Click to See the Project Source Code
         </a>
       </p>

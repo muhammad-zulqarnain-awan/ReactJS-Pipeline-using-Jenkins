@@ -30,7 +30,7 @@ function App() {
       <br />
       <p>
         <a href="https://github.com/muhammad-zulqarnain-awan/ReactJS-Pipeline-using-Jenkins">
-          Click to See the Project Source Code
+          Click to See the Project Source Code on GitHub
         </a>
       </p>
       <br /><br />

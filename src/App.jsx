@@ -25,7 +25,7 @@ function App() {
       </div>
       <p className="read-the-docs">DevOps Project</p>
       <p className="read-the-docs">
-        Containerize ReactJS app and Push to DockerHub using Jenkins
+        Containerize ReactJS Counter App and Push to DockerHub using Jenkins
       </p>
       <br />
       <p>

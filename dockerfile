@@ -1,6 +1,6 @@
 FROM node:alpine as build
 
-LABEL maintainer="Muhammad-Zulqarnain-Awan"
+LABEL maintainer="Muhammad Zulqarnain Awan"
 
 WORKDIR /app
 

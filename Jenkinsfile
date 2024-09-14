@@ -47,7 +47,7 @@ pipeline {
                     }
 
                     withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username', passwordVariable: 'password')]) {
-                        sh "docker run --name ${DOCKER_CONTAINER_NAME} -p 8081:80 ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
+                        sh "docker run -dit --name ${DOCKER_CONTAINER_NAME} -p 8081:80 ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
                     }
                 }
             }

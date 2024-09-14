@@ -44,7 +44,9 @@ pipeline {
             steps {
                 script {
 
-                    if (sh(script: "docker ps -a --filter 'name=${DOCKER_CONTAINER_NAME}' --format '{{.Names}}'", returnStdout: true).trim()) {
+                    def containerExitst = sh(script: "docker ps -a --filter 'name=${DOCKER_CONTAINER_NAME}' --format '{{.Names}}'", returnStdout: true).trim()
+
+                    if (containerExitst) {
                         sh "docker rm -f ${DOCKER_CONTAINER_NAME}"
                     }
 

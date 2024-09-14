@@ -19,11 +19,14 @@ pipeline {
         
         stage ("Build Docker Image") {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username')]) {
-                    echo "${username}"
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'password', usernameVariable: 'username')]) {
                     sh "docker build -t ${username}/${DOCKER_IMAGE}:${DOCKER_TAG} ."
                     sh "docker image tag ${username}/${DOCKER_IMAGE}:${DOCKER_TAG} ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
                 }
+                // withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username')]) {
+                //     echo "${username}"
+
+                // }
             }
         }
 

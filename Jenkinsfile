@@ -48,7 +48,7 @@ pipeline {
                         sh "docker rm -f ${DOCKER_CONTAINER_NAME}"
                     }
 
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username', passwordVariable: 'password')]) {
                         sh "docker run --name ${DOCKER_CONTAINER_NAME} -p 8080:80 ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
                     }
                 }

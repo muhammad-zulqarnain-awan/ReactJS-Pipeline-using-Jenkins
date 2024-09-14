@@ -36,8 +36,6 @@ pipeline {
                     sh "docker login -u ${username} -p ${password}"
                     sh "docker push ${username}/${DOCKER_IMAGE}:${DOCKER_TAG}"
                     sh "docker push ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
-                    sh "docker rmi ${username}/${DOCKER_IMAGE}:${DOCKER_TAG}"
-                    sh "docker rmi ${username}/${DOCKER_IMAGE}:${DOCKER_TAG_LATEST}"
                 }
             }
         }

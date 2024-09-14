@@ -38,14 +38,11 @@ pipeline {
             }
         }
 
-        stage ("Create Container") {
+        stage ("Create and Run Container") {
             steps {
                 script {
-                    def containerName = "reactjs-app-cont"
 
-                    def containerExists = sh(script: "docker ps -a --filter 'name=${DOCKER_CONTAINER_NAME}' --format '{{.Names}}'", returnStdout: true).trim()
-
-                    if (containerExists) {
+                    if (sh(script: "docker ps -a --filter 'name=${DOCKER_CONTAINER_NAME}' --format '{{.Names}}'", returnStdout: true).trim()) {
                         sh "docker rm -f ${DOCKER_CONTAINER_NAME}"
                     }
 
